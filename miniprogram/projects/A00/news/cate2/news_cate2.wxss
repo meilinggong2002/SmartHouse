@@ -1,0 +1,6 @@
+@import "../../../../style/project/base/appt.wxss";
+@import "../../skin/skin.wxss"; 
+@import "../../../../style/project/news_index_base.wxss";  
+page {
+	background: linear-gradient(180deg, #333333, rgb(218, 197, 177), #ece0d5) !important;
+}

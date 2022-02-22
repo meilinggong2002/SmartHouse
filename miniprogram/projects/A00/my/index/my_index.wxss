@@ -1,0 +1,29 @@
+@import "../../skin/skin.wxss";
+@import "../../../../style/project/my_index_base.wxss"; 
+page {
+	background: linear-gradient(180deg, #333333, rgb(218, 197, 177), #ece0d5) !important;
+}
+
+.main .upside,
+.main .upside>image {
+	height: 350rpx;
+	border-bottom-left-radius: 80rpx;
+	border-bottom: 10rpx solid #B99D81;
+}
+
+.main .upside {
+	padding-top: 80rpx;
+}
+
+/*投影*/
+.main .upside-shadow {
+	box-shadow: unset
+}
+
+.main .upside .user-bar .detail .desc {
+	color: #fff;
+} 
+
+.main .down .today .title {
+	color: var(--projectCompareColor)
+}  

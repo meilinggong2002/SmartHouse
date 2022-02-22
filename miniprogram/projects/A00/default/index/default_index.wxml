@@ -1,0 +1,49 @@
+<view class="main">
+	<view class="up">
+		<image mode="aspectFill" src="../../skin/images/default_index_bg.jpg" />
+	</view>
+	<view class="down">
+		<view class="pic-card">
+			<view class="left" bindtap="url" data-url="../../news/index/news_index?id=1">
+				<image mode="aspectFill" src="../../skin/images/menu/1.jpg" />
+				<view class="title">最新资讯</view>
+			</view>
+			<view class="right">
+				<view class="item1" bindtap="url" data-url="../../news/index/news_index?id=2">
+					<image mode="aspectFill" src="../../skin/images/menu/2.jpg" />
+					<view class="title">项目介绍</view>
+				</view>
+				<view class="item2" bindtap="url" data-url="../../news/index/news_index?id=3">
+					<image mode="aspectFill" src="../../skin/images/menu/3.jpg" />
+					<view class="title">微楼书</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="pic-card margin-top-xl">
+			<view class="left" bindtap="url" data-url="../../news/index/news_index?id=5">
+				<image mode="aspectFill" src="../../skin/images/menu/4.jpg" />
+				<view class="title">热门活动</view>
+			</view>
+			<view class="right">
+				<view class="item1" bindtap="url" data-url="../../news/index/news_index?id=4">
+					<image mode="aspectFill" src="../../skin/images/menu/5.jpg" />
+					<view class="title">看户型</view>
+				</view>
+				<view class="item2" bindtap="url" data-url="../../news/index/news_index?id=6">
+					<image mode="aspectFill" src="../../skin/images/menu/6.jpg" />
+					<view class="title">置业顾问</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="company">世纪地产置业 <text class="margin-left-xxs margin-right-xs">|</text><text class="icon-home"></text></view>
+		<button open-type="share" class="btn-base btn-project"><text class="icon-forward margin-right-xs"></text>分享</button> 
+		
+	</view>
+</view>
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../../../tpls/public/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{skin,curMenu:'home_index',returnHome}}" />
+</block>
