@@ -1,0 +1,64 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<view class="main padding-project">
+		<view class="text-pic-list-box margin-top-xs">
+			<view class="item card-project shadow-project">
+
+				<image wx:if="{{activityJoin.ACTIVITY_JOIN_STATUS==0}}" class="status" mode="aspectFill" src="../../../images/status/0.png" />
+				<image wx:elif="{{activityJoin.ACTIVITY_JOIN_STATUS==1}}" class="status" mode="aspectFill" src="../../../images/status/1.png" />
+				<image wx:elif="{{activityJoin.ACTIVITY_JOIN_STATUS==99}}" class="status" mode="aspectFill" src="../../../images/status/99.png" />
+
+				<view class="title-line">
+					<view class="title content-cut-two">{{activityJoin.ACTIVITY_JOIN_ACTIVITY_TITLE}} </view>
+				</view>
+
+				<view class="author">
+					<text class="icon-calendar margin-right-xs text-s"></text><text class="text-cut">{{activityJoin.ACTIVITY_JOIN_ADD_TIME}}</text>
+				</view>
+				<view class="data">
+
+					<text wx:if="{{activityJoin.ACTIVITY_JOIN_STATUS==1}}"><text class="icon-check margin-right-xxs"></text><text class="text-green">审核成功</text></text>
+
+					<text wx:if="{{activityJoin.ACTIVITY_JOIN_STATUS==99}}"><text class="icon-close margin-right-xxs"></text><text class="text-red">审核未过</text></text>
+
+					<text wx:if="{{activityJoin.ACTIVITY_JOIN_STATUS==0}}"><text class="icon-forward margin-right-xxs"></text><text class="text-orange">待审核</text></text>
+				</view>
+
+
+
+			</view>
+
+		</view>
+
+
+
+		<view class="info-list-box margin-bottom-xxl">
+			<view class="item card-project shadow-project">
+				<view class="info margin-bottom-s">
+					<view class="center text-bold">上报信息</view>
+				</view>
+				<view class="info" wx:if="{{activityJoin.ACTIVITY_JOIN_STATUS==1}}"> 
+					<view class="title">获得积分：</view>
+					<view class="content">{{activityJoin.ACTIVITY_JOIN_SCORE}}分</view>
+				</view>
+				<view class="info" wx:for="{{activityJoin.ACTIVITY_JOIN_FORMS}}" wx:key="key">
+					<view class="title">{{item.title}}：</view>
+
+					<view wx:if="{{item.type=='image'}}" class="content" style="flex-wrap: wrap;">
+						<view class="pic" wx:for="{{item.val}}" wx:for-item="itm" wx:key="key1" bindtap="url" data-type="image" data-url="{{itm}}">
+							<image src="{{itm}}" mode="aspectFill" class="loading" show-menu-by-longpress="{{true}}" />
+						</view>
+					</view>
+
+					<view wx:else class="content">{{item.val}}</view>
+
+				</view>
+
+				<view class="info text-grey margin-top-xs text-s">上报时间：{{activityJoin.ACTIVITY_JOIN_ADD_TIME}}</view>
+
+			</view>
+		</view>
+	</view>
+</block>

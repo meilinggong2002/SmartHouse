@@ -1,0 +1,12 @@
+@import "../../../../../style/public/comm_box_list.wxss";
+@import "../../../style/skin.wxss"; 
+
+.comm-list-box .item-leftbig1 .leftbig-right .leftbig-title { 
+    font-size: 30rpx; 
+}
+
+.comm-list-box .item-leftbig1 .leftbig-desc {
+    margin-top: 5rpx;
+    font-size: 24rpx;
+    color: #999;
+}

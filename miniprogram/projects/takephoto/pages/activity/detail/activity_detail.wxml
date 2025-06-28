@@ -1,0 +1,88 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+
+	<view class="main">
+		<view class="top">
+			<image class="cover loading" mode="widthFix" lazy-load="{{true}}" src="{{activity.ACTIVITY_OBJ.cover[0]}}" />
+			<view class="inner">
+				<view class="title"><text>{{activity.ACTIVITY_TITLE}} </text></view>
+				<view class="info">
+
+					<view class="line" style="display:flex;font-size: 28rpx;align-items: center;"><text class="icon-remind margin-right-xs"></text><text class="tt">时间：</text>{{activity.start}} ~ {{activity.stop}}</view>
+
+					<view class="line more" bind:tap="url" data-type="phone" data-url="{{activity.ACTIVITY_OBJ.tel}}">
+						<view class="more1">
+							<text class="icon-people margin-right-xs"></text><text class="tt">联系人：</text>{{activity.ACTIVITY_OBJ.person}}
+						</view>
+						<view class="more2"> {{activity.ACTIVITY_OBJ.tel}}<text class="icon-right"></text></view>
+
+					</view>
+
+					<view class="line"><text class="icon-apps margin-right-xs"></text><text class="tt">每人可上报次数：</text>
+						<text wx:if="{{activity.ACTIVITY_MAX_CNT==0}}">无限制</text>
+						<text wx:else>{{activity.ACTIVITY_MAX_CNT}}次</text>
+					</view>
+
+					<view class="line"><text class="icon-roundclose margin-right-xs"></text><text class="tt">撤销规则：</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==0}}">不可撤销</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==1}}">随时可撤销</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==2}}">截止前可撤销</text>
+					</view>
+
+				</view>
+
+			</view>
+
+
+		</view>
+
+		<view class="bottom">
+
+			<view class="inner">
+
+				<view class="detail article-box">
+					<view class="article" style="padding-top:0">
+						<block wx:for="{{activity.ACTIVITY_OBJ.desc}}" wx:key="key">
+							<view class="content" wx:if="{{item.type=='text'}}">
+								<text user-select="{{true}}">{{item.val}}</text>
+							</view>
+							<view class="pics" wx:if="{{item.type=='img'}}">
+								<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+								</image>
+							</view>
+						</block>
+					</view>
+
+				</view>
+
+			</view>
+		</view>
+
+
+	</view>
+
+	<view style="height:200rpx"></view>
+
+	<cmpt-detail mode="mode2" topBtnShow="{{topBtnShow}}" tag="{{activity.myActivityJoinTag}}" oid="{{activity._id}}" cate="{{activity.ACTIVITY_CATE_NAME}}" title="{{activity.ACTIVITY_TITLE}}" cover="{{activity.ACTIVITY_OBJ.cover[0]}}" qr="{{activity.ACTIVITY_QR}}" desc="查看项目详情" bg="{{skin.PROJECT_COLOR}}">
+		<view class="bottom-line">
+
+			<view class="score">
+				<view class="item">
+					<text class="num text-project">{{activity.ACTIVITY_OBJ.score}}</text>
+					<text class="tt">可获积分</text>
+				</view>
+				<view class="item">
+					<text class="num"><text class="text-compare">{{activity.ACTIVITY_JOIN_CNT}}</text></text>
+					<text class="tt">成功上报</text>
+				</view>
+
+			</view>
+
+			<view bindtap="bindJoinTap" wx:if="{{activity.statusDesc=='进行中'}}" class="join text-white">我要上报</view>
+			<view wx:else class="join bg-grey light">{{activity.statusDesc}}</view>
+		</view>
+	</cmpt-detail>
+
+</block>

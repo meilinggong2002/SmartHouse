@@ -1,0 +1,18 @@
+<view class="item shadow-project" bindtap="url" data-url="{{route=='activity/online_list'?'../../activity/':'../'}}detail/activity_detail?id={{item._id}}">
+	<view class="status {{item.statusDesc=='进行中'?'comm':''}}">
+		<text wx:if="{{item.statusDesc=='进行中'}}">进行中</text>
+		<text wx:else>{{item.statusDesc}}</text>
+	</view>
+	<view class="left">
+		<view wx:if="{{item.ACTIVITY_OBJ.score>0}}" class="score">{{item.ACTIVITY_OBJ.score}}分</view>
+		<image class="cover loading shadow-project" mode="aspectFill" lazy-load="{{true}}" src="{{item.ACTIVITY_OBJ.cover[0]}}" /> 
+	</view>
+	<view class="right">
+		<view class="title content-cut-two">{{item.ACTIVITY_TITLE}} </view>
+		<view class="detail">
+			<view class="line"><text class="icon-time margin-right-xxs text-cyan"></text>{{item.start}} 至</view>
+			<view class="line"><text class="icon-remind margin-right-xxs text-cyan"></text>{{item.end}}</view>
+			<view class="line"><text class="icon-friend margin-right-xxs text-cyan"></text>已上报{{item.ACTIVITY_JOIN_CNT}}次</view>
+		</view>
+	</view>
+</view>

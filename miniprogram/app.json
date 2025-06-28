@@ -1,0 +1,114 @@
+{
+	"pages": [
+		"projects/takephoto/pages/default/index/default_index",
+		"projects/takephoto/pages/about/index/about_index",
+		"projects/takephoto/pages/search/search",
+		"projects/takephoto/pages/my/index/my_index",
+		"projects/takephoto/pages/my/reg/my_reg",
+		"projects/takephoto/pages/my/edit/my_edit",
+		"projects/takephoto/pages/my/foot/my_foot",
+		"projects/takephoto/pages/my/fav/my_fav",
+		"projects/takephoto/pages/news/index/news_index",
+		"projects/takephoto/pages/news/detail/news_detail",
+		"projects/takephoto/pages/news/cate1/news_cate1",
+		"projects/takephoto/pages/news/cate2/news_cate2",
+		"projects/takephoto/pages/admin/news/list/admin_news_list",
+		"projects/takephoto/pages/admin/news/add/admin_news_add",
+		"projects/takephoto/pages/admin/news/edit/admin_news_edit",
+		"projects/takephoto/pages/admin/setup/about/admin_setup_about",
+		"projects/takephoto/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/takephoto/pages/admin/setup/qr/admin_setup_qr",
+		"projects/takephoto/pages/admin/index/home/admin_home",
+		"projects/takephoto/pages/admin/index/login/admin_login",
+		"projects/takephoto/pages/admin/content/admin_content",
+		"projects/takephoto/pages/admin/mgr/log/admin_log_list",
+		"projects/takephoto/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/takephoto/pages/admin/mgr/list/admin_mgr_list",
+		"projects/takephoto/pages/admin/mgr/add/admin_mgr_add",
+		"projects/takephoto/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/takephoto/pages/admin/user/list/admin_user_list",
+		"projects/takephoto/pages/admin/user/detail/admin_user_detail",
+		"projects/takephoto/pages/admin/user/export/admin_user_export",
+		"projects/takephoto/pages/activity/index/activity_index",
+		"projects/takephoto/pages/activity/his/activity_his",
+		"projects/takephoto/pages/activity/detail/activity_detail",
+		"projects/takephoto/pages/activity/join/activity_join",
+		"projects/takephoto/pages/activity/my_join_list/activity_my_join_list",
+		"projects/takephoto/pages/activity/my_join_detail/activity_my_join_detail",
+		"projects/takephoto/pages/activity/calendar/activity_calendar",
+		"projects/takephoto/pages/admin/activity/join_list/admin_activity_join_list",
+		"projects/takephoto/pages/admin/activity/export/admin_activity_export",
+		"projects/takephoto/pages/admin/activity/list/admin_activity_list",
+		"projects/takephoto/pages/admin/activity/add/admin_activity_add",
+		"projects/takephoto/pages/admin/activity/edit/admin_activity_edit",
+		"projects/takephoto/pages/score/my_list/score_my_list",
+		"projects/takephoto/pages/score/rank/score_rank",
+		"projects/takephoto/pages/goods/index/goods_index",
+		"projects/takephoto/pages/goods/detail/goods_detail",
+		"projects/takephoto/pages/goods/my_order_list/goods_my_order_list",
+		"projects/takephoto/pages/admin/goods/list/admin_goods_list",
+		"projects/takephoto/pages/admin/goods/add/admin_goods_add",
+		"projects/takephoto/pages/admin/goods/edit/admin_goods_edit",
+		"projects/takephoto/pages/admin/goods/order_list/admin_goods_order_list",
+		"projects/takephoto/pages/activity/list/activity_list",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#4585F5",
+		"navigationBarTitleText": "文明随手拍小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#4585F5",
+		"list": [
+			{
+				"pagePath": "projects/takephoto/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/takephoto/images/tabbar/home.png",
+				"selectedIconPath": "/projects/takephoto/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/takephoto/pages/news/cate1/news_cate1",
+				"text": "公告",
+				"iconPath": "/projects/takephoto/images/tabbar/news.png",
+				"selectedIconPath": "/projects/takephoto/images/tabbar/news_cur.png"
+			},
+			{
+				"pagePath": "projects/takephoto/pages/activity/index/activity_index",
+				"text": "项目",
+				"iconPath": "/projects/takephoto/images/tabbar/enroll.png",
+				"selectedIconPath": "/projects/takephoto/images/tabbar/enroll_cur.png"
+			},
+			{
+				"pagePath": "projects/takephoto/pages/score/rank/score_rank",
+				"text": "积分榜",
+				"iconPath": "/projects/takephoto/images/tabbar/his.png",
+				"selectedIconPath": "/projects/takephoto/images/tabbar/his_cur.png"
+			},
+			{
+				"pagePath": "projects/takephoto/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/takephoto/images/tabbar/my.png",
+				"selectedIconPath": "/projects/takephoto/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}
